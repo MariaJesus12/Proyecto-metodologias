@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Profesor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <i class="fas fa-user-shield"></i>
+        <span id="navbar-welcome">Bienvenido</span>
+        </a>
+        <div class="d-flex">
+        <button class="btn btn-outline-light ms-2" id="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+        </button>
+        </div>
+    </div>
+    </nav>
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="fas fa-tachometer-alt me-2"></i>Panel del Profesor</h2>
+            <button class="btn btn-success" id="add-event-btn" data-bs-toggle="modal" data-bs-target="#eventModal">
+                <i class="fas fa-plus me-2"></i>Nuevo Evento
+            </button>
+        </div>
+        <div class="row mb-4">
+            <!-- Estadísticas rápidas -->
+            <div class="col-md-3 mb-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Eventos Activos</h5>
+                        <p class="card-text display-6" id="eventos-activos">0</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ...más tarjetas de estadísticas... -->
+        </div>
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="fas fa-calendar me-2"></i>Próximos Eventos</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Título</th>
+                                <th>Fecha</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventos-tbody">
+                            <!-- Aquí se cargan los eventos por JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para crear/editar evento -->
+<div class="modal fade" id="eventModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="eventForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventModalLabel">Nuevo Evento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="eventId">
+          <div class="mb-3">
+            <label for="eventTitle" class="form-label">Título</label>
+            <input type="text" class="form-control" id="eventTitle" required>
+          </div>
+          <div class="mb-3">
+            <label for="eventDescription" class="form-label">Descripción</label>
+            <textarea class="form-control" id="eventDescription" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="eventDate" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="eventDate" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para mostrar estudiantes inscritos -->
+<div class="modal fade" id="inscritosModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Estudiantes Inscritos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="inscritos-list" class="list-group"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Tu JS principal -->
+    <script src="js/script.js"></script>
+</body>
+</html>
