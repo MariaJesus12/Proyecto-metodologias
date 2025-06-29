@@ -1,0 +1,163 @@
+body {
+    padding-top: 100px;
+    background-color: #f8f9fa;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Estilos para las cards de eventos */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Estilos para el menú lateral */
+.offcanvas-start {
+    width: 250px;
+}
+
+#sidebarMenu {
+    background: linear-gradient(135deg, #f8fafc 80%, #e3eafc 100%);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #e3e3e3;
+    background: #1a237e;
+    color: #fff;
+    border-top-right-radius: 1rem;
+}
+
+.offcanvas-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.list-group-item.active,
+.list-group-item:active,
+.list-group-item:hover {
+    background: #1a237e;
+    color: #fff;
+}
+
+.list-group-item i {
+    color: #1a237e;
+    margin-right: 0.7rem;
+    font-size: 1.1rem;
+}
+
+.list-group-item.active i,
+.list-group-item:active i,
+.list-group-item:hover i {
+    color: #fff;
+}
+
+/* Estilos para los badges */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+/* Estilos para las estadísticas */
+.card .display-6 {
+    font-weight: 700;
+}
+
+/* Estilos para la tabla */
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el modal */
+.modal-header {
+    border-bottom: none;
+}
+
+/* Estilos para el switch de rol */
+.form-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+    margin-left: 0;
+}
+
+/* Estilos personalizados */
+.bg-dark-blue {
+    background-color: #1a237e !important;
+}
+.text-dark-blue {
+    color: #1a237e !important;
+}
+.btn-dark-blue {
+    background-color: #1a237e !important;
+    color: #fff !important;
+    border-color: #1a237e !important;
+}
+.btn-dark-blue:hover, .btn-dark-blue:focus {
+    background-color: #151b5e !important;
+    color: #fff !important;
+    border-color: #151b5e !important;
+}
+.btn-outline-dark-blue {
+    color: #1a237e !important;
+    border-color: #1a237e !important;
+    background-color: transparent !important;
+}
+.btn-outline-dark-blue:hover, .btn-outline-dark-blue:focus {
+    background-color: #1a237e !important;
+    color: #fff !important;
+    border-color: #1a237e !important;
+}
+.badge-dark-blue {
+    background-color: #1a237e !important;
+    color: #fff !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 120px;
+    }
+    
+    .offcanvas-start {
+        width: 80%;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
